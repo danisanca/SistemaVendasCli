@@ -1,9 +1,8 @@
-package projetoOrientacao2.Control
+package system.cli.control
 
-import projetoOrientacao2.Business.DisplayBusiness
-import projetoOrientacao2.Business.ManagerProduct
-import projetoOrientacao2.Business.ManagerProduct.Companion.registerProduct
-import projetoOrientacao2.Entity.Product
+import system.cli.business.ManagerProduct.Companion.registerProduct
+import system.cli.business.DisplayBusiness
+import system.cli.entity.Product
 
 class Display {
     val optionValue:Int? =null
@@ -13,7 +12,7 @@ class Display {
         displayList()
     }
 
-    fun displayList(){
+    private fun displayList(){
         displayMenuOption()
         do{
             val resultLine = Console.readInt("Escolha a Opção desejada: ")
@@ -28,7 +27,7 @@ class Display {
         }while(display.changeDisplay(resultLine) == -1)
 
     }
-    fun displayMenuOption(){
+    private fun displayMenuOption(){
         println("================= Escolha a opção desejada.============================")
         println("1- Lista de Produtos.")
         println("2- Cadastrar Produto.")
@@ -43,7 +42,7 @@ class Display {
 
 
     }
-    fun displayRegisterProducts(){
+    private fun displayRegisterProducts(){
         println("==================== Cadastrar Produto.==============================")
 do{
     var optionvalue:Int = 0

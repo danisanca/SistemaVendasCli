@@ -1,7 +1,7 @@
-package projetoOrientacao2.Business
+package system.cli.business
 
-import projetoOrientacao2.Entity.Product
-import projetoOrientacao2.dataBase.ProductList
+import system.cli.dataBase.ProductList
+import system.cli.entity.Product
 
 class ManagerProduct() {
 

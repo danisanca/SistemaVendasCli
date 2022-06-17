@@ -1,4 +1,4 @@
-package projetoOrientacao2.Business
+package system.cli.business
 
 class DisplayBusiness {
     fun changeDisplay(option:Int):Int{

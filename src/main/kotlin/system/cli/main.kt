@@ -1,11 +1,12 @@
-package projetoOrientacao2
+package system.cli
 
-import projetoOrientacao2.Control.Display
+import system.cli.control.Display
 
 //---Sistema de Vendas
-//Control: Console e Diplay
+//Control: system.cli.Control.Console e Diplay
 //Entity: Produto , Tipo do Produtos
 //Business:
+
 fun main() {
     Display()
 }

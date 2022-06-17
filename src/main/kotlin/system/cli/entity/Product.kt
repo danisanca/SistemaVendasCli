@@ -1,4 +1,2 @@
-package projetoOrientacao2.Entity
-
-
+package system.cli.entity
 class Product(val nome:String,val preco:Float)
