@@ -51,6 +51,17 @@ class Console {
             } while (value == null || value < 0 || value >1)
             return value
         }//readNewRegister
+        fun backMenu(msg: String): Int {
+            var value: Int? = null
+            do {
+                print(msg)
+                val result = readLine()
+                if(result !=null && result != "") {
+                    value = result.toIntOrNull()
+                }
+            } while (value == null || value != 1)
+            return value
+        }//
     }
 }
 

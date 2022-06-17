@@ -5,13 +5,14 @@ import system.cli.entity.Product
 
 class ManagerProduct() {
 
-    companion object{
-        fun registerProduct(product: Product):Boolean{
+    companion object {
+        fun registerProduct(product: Product): Boolean {
             val database = ProductList(product)
             database.productListDb.add(product)
             println("Registrando Produto: $product.name")
-return true
+            return true
         }
+
     }
 
 }
