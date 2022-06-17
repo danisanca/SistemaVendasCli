@@ -1,6 +1,23 @@
 package system.cli.control
 
-class Console {
+/**
+ * Adorei essa classe, bastante coisa acontecendo.
+ *
+ * Minha provocação:
+ * Qual a responsabilidade do Console? Na minha visão, ler informações.
+
+ * Será então que faz sentido as validações de valores? Por exemplo, valor entre 0 e 5 aqui na função
+ * readInt? Será que não deveria somente ler um inteiro, não interessando qual o inteiro?
+ * E a camada business lida com a lógica de valores válidos ou não?
+ *
+ * Fazendo readNameProduct e readPriceProduct você atrelou o Console a uma entidade.
+ * E se fosse, readInt, readString, readFloat? Posteriormente quando você adicionar uma outra entidade,
+ * seu Console já está pronto pra ler informações.
+ *
+ * */
+
+// Ninguém precisa instanciar Console
+class Console private constructor() {
     companion object {
         fun readInt(msg: String): Int {
             var value: Int? = null
