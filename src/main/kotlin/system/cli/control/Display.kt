@@ -4,6 +4,8 @@ import system.cli.business.ManagerProduct.Companion.registerProduct
 import system.cli.business.DisplayBusiness
 import system.cli.entity.Product
 
+// Muito show, sistemas assim são muito bons pra praticar a lógica e os vários fluxos que podem acontecer.
+
 class Display {
     val optionValue: Int? = null
     private val display = DisplayBusiness()
