@@ -3,7 +3,7 @@ package system.cli.dataBase
 import system.cli.entity.Product
 
 // Precisa do prduto no construtor?
-class ProductList(val product: Product) {
+class ProductList {
     var productListDb:MutableList<Product> = mutableListOf()
 }
 

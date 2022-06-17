@@ -1,14 +1,13 @@
 package system.cli.control
 
 import system.cli.business.ManagerProduct.Companion.registerProduct
-import system.cli.business.DisplayBusiness
+import system.cli.business.DisplayBusiness.Companion.changeDisplay
+import system.cli.business.ManagerProduct.Companion.listarProduct
 import system.cli.entity.Product
 
 // Muito show, sistemas assim são muito bons pra praticar a lógica e os vários fluxos que podem acontecer.
 
 class Display {
-    val optionValue: Int? = null
-    private val display = DisplayBusiness()
 
     init {
         displayList()
@@ -18,15 +17,15 @@ class Display {
         displayMenuOption()
         do {
             val resultLine = Console.readInt("Escolha a Opção desejada: ")
-            if (display.changeDisplay(resultLine) == 1) {
+            if (changeDisplay(resultLine) == 1) {
                 displayListProducts()
-            } else if (display.changeDisplay(resultLine) == 2) {
+            } else if (changeDisplay(resultLine) == 2) {
                 displayRegisterProducts()
-            } else if (display.changeDisplay(resultLine) == 0) {
+            } else if (changeDisplay(resultLine) == 0) {
                 println("Fechando o Programa")
                 return
             }
-        } while (display.changeDisplay(resultLine) == -1)
+        } while (changeDisplay(resultLine) == -1)
 
     }
 
@@ -39,23 +38,23 @@ class Display {
     }
 
     private fun displayListProducts() {
-        var optionvalue: Int = 0
+        var optionvalue: Int
         println("================================ Menu ==================================")
         println("1- Voltar ao menu Principal.")
         println("=========================Lista de Produtos==============================")
-
+        listarProduct()
         do {
             val resultName = Console.backMenu("Digite a opção desejada: ")
-                optionvalue = resultName.toInt()
+                optionvalue = resultName
 
-        } while (optionvalue != 0 )
-
+        } while (optionvalue != 1 )
+        displayList()
     }
 
     private fun displayRegisterProducts() {
         println("==================== Cadastrar Produto.==============================")
         do {
-            var optionvalue: Int = 0
+            var optionvalue = 0
             val resultName = Console.readNameProduct("Digite o nome do produto: ")
             val resultPreco = Console.readPriceProduct("Digite o preco do produto: ")
             val cadastrar = registerProduct(Product(resultName, resultPreco))
